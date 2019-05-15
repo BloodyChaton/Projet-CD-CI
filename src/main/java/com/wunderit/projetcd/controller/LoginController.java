@@ -17,22 +17,36 @@ public class LoginController {
     // Create a new instance of MongoDB
 	Driver instance = new com.wunderit.projetcd.mongodriver.Driver();
 	
-	@RequestMapping(value="/login", method = RequestMethod.GET)
+	@RequestMapping(value="/superdevopsapp", method = RequestMethod.GET)
 	public String loginMessage(ModelMap model){
 		return "login";
 	}
 
-	@RequestMapping(value="/login", method = RequestMethod.POST)
+	@RequestMapping(value="/superdevopsapp", method = RequestMethod.POST)
 	public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String descriptif){
 		model.put("name", name);
 		model.put("descriptif", descriptif);
 
 		Document doc = new Document()
-		.append("nom", name)
+		.append("name", name)
 		.append("info", descriptif);
 
 		instance.createdoc(doc);
-		
+	
 		return "welcome";
+	}
+
+	@RequestMapping(value="/posted", method = RequestMethod.GET)
+	public String postedMessage(ModelMap model){
+		List<String> alldocs = instance.getalldocs();
+		System.out.println(alldocs);
+		model.put("alldocs", alldocs);
+		return "posted";
+	}
+
+	@RequestMapping(value="/gameover", method = RequestMethod.GET)
+	public String logoutMessage(ModelMap model){
+		instance.disconnect();
+		return "gameover";
 	}
 }

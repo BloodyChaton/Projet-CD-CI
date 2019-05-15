@@ -3,28 +3,31 @@
 
 <head>
     <title>Application DevOps</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
 </head>
 
 <body>
-
-    <header>
-        <h1>Bienvenue sur l'application super DevOps</h1>
-        <h2>L'application la plus DevOps du marché!</h2>
-        <img src="/images/chocobo.jpg" alt="une image de chocobo"/>
+    <header style="background-color:powderblue;">
+        <h1>Welcome to Super DevOps Application</h1>
+        <h2>The most DevOps application on Earth!<img src="/images/chocobo.jpg" alt="une image de chocobo" style="float:right;width:233px;height:175px;"/></h2>        
     </header>
 
-    <p>Vous pouvez tester ci-dessous l'accès à la Super Base de données MongoDB.</p>
+    <p>On this page, you may test the connection to MongoDB server.</p>
 
 	<form method="post">
-		Nom du stagiaire: <input type="text" name="name" />
-		Descriptif du stagiaire: <input type="text" name="descriptif" /> 
-		<input type="submit" />
+        <fieldset>
+            <legend>Fill in this form:</legend>
+                Enter your name:<br/>
+                <input type="text" name="name" /><br/>
+                Provide us with a short description:<br/>
+                <input type="text" name="descriptif" /><br/>
+                <input type="submit" value="To Mongo!"/>
+        </fieldset>
     </form>
     
+    <hr/>
     <footer>
-        <p>&reg; Application super DevOps est l'unique super propriété de le super promo devops 2019.</p>
+        <p>&reg; Super DevOps Application is solely owned by the Chocobo displayed on this page.</p>
     </footer>
 </body>
-
 </html>

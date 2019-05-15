@@ -8,12 +8,12 @@
 
 <body>
     <header style="background-color:powderblue;">
-        <h1>Congratulations!</h1>
-        <h2>You have just posted a document on Mongo!<img src="/images/chocobo.jpg" alt="une image de chocobo" style="float:right;width:233px;height:175px;"/></h2>        
+        <h1>You have done a good Job!</h1>
+        <h2>Please browse through what you posted so far!<img src="/images/chocobo.jpg" alt="une image de chocobo" style="float:right;width:233px;height:175px;"/></h2>        
     </header>
 
-    <p>If you want to see what you posted so far,<br/>
-        <a href="posted">Click here</a>
+    <p>List of your posts:<br/>
+    ${alldocs}
     </p>
 
     <p>Would you like to play again?<br/>
