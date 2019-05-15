@@ -9,3 +9,6 @@ target/
 .gradle
 .project
 .vscode
+
+# ignore MacOS files
+**/**/.DS_Store
