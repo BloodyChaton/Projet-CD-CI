@@ -1,0 +1,6 @@
+---
+- name: Setup Mongo
+  hosts: db-server
+  become: True
+  roles:
+  - samdoran.mongodb

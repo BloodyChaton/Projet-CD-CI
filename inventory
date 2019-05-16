@@ -1,0 +1,15 @@
+# Lines beginning with a # are comments, and are only included for # illustration. These comments are overkill for most inventory files. 
+
+# Kube servers
+[k8s-server]
+192.168.60.5 
+
+# Database servers
+[db-server]
+192.168.60.4
+
+
+# Variables that will be applied to all servers
+[all:vars]
+ansible_ssh_user=vagrant
+#ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
