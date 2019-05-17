@@ -1,0 +1,40 @@
+
+pipeline{
+ agent {
+     label 'slave'
+ }
+ tools{
+     maven 'mavenslave'
+ }
+ stages {
+     
+     
+     
+     stage ('checkout'){
+      steps{
+         git branch: 'features/pipelinedeploy', credentialsId: '2a2feba3-2977-4c9e-9505-379c35a7c21a', url: 'https://github.com/BloodyChaton/Projet-CD-CI.git'
+       }
+       }
+     stage ('install'){
+       steps{
+         sh "mvn install"
+        }
+     }
+     stage ('test'){
+      parallel{
+        stage ('etape-1.1') {
+          steps {    
+            sh "mvn test"
+          }
+        }
+        stage ('etape-1.2') {
+          steps {
+            sh "mvn pmd:cpd"
+          }
+        }
+     }
+     }
+
+}
+}
+

@@ -49,3 +49,12 @@
   tags:
     - mongodb
     - mongodb_service
+
+- name: Cretate MongodbUser
+  mongodb_user:
+    database: admin
+    name: bob
+    password: 12345
+    roles: userAdminAnyDatabase
+    state: present
+
