@@ -49,3 +49,31 @@
   tags:
     - mongodb
     - mongodb_service
+
+- name: Cretate MongodbUser
+  mongodb_user:
+    database: admin
+    name: yacuba
+    password: yacuba
+    roles: userAdminAnyDatabase
+    state: present
+
+- name: Stop mongo
+  service:
+    name: "{{ mongodb_service_name }}"
+    enabled: yes
+    state: stopped
+
+- name: Copy mongod2.conf
+  template:
+    src: mongod2.conf.j2
+    dest: "{{ mongodb_config_file }}"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Start mongo
+  service:
+    name: "{{ mongodb_service_name }}"
+    enabled: yes
+    state: started

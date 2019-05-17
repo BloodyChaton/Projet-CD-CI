@@ -7,4 +7,4 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minik
 minikube version
 export CHANGE_MINIKUBE_NONE_USER=true
 su
-minikube start -vm-driver=none
+minikube start --vm-driver=none
