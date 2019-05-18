@@ -1,26 +1,27 @@
-
 pipeline{
- agent {
-     label 'slave'
- }
- tools{
-     maven 'mavenslave'
- }
- stages {
-     
-     
-     
-     stage ('checkout'){
+  agent {
+    label 'linux'
+  }
+  tools{
+    maven 'mavenslave'
+  }
+  stages {
+    stage ('checkout'){
       steps{
-         git branch: 'features/pipelinedeploy', credentialsId: '2a2feba3-2977-4c9e-9505-379c35a7c21a', url: 'https://github.com/BloodyChaton/Projet-CD-CI.git'
-       }
-       }
-     stage ('install'){
-       steps{
-         sh "mvn install"
+          git branch: 'features/luc', credentialsId: 'GitHubCDCI', url: 'https://github.com/BloodyChaton/Projet-CD-CI.git'
         }
-     }
-     stage ('test'){
+    }
+    stage ('validate'){
+      steps{
+        sh "mvn validate"
+      }
+    }
+    stage ('deploy'){
+      steps{
+        sh "mvn deploy -DskipTests"
+      }
+    }
+    stage ('test'){
       parallel{
         stage ('etape-1.1') {
           steps {    
@@ -29,12 +30,10 @@ pipeline{
         }
         stage ('etape-1.2') {
           steps {
-            sh "mvn pmd:cpd"
+            sh "mvn pmd:pmd"
           }
         }
-     }
-     }
-
+      }
+    }
+  }
 }
-}
-

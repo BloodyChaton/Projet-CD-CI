@@ -33,4 +33,11 @@ Vagrant.configure("2") do |config|
     dc.vm.network :private_network, ip: "192.168.60.15"
     #dc.vm.network :forwarded_port, guest: 80, host: 80
   end
+    # Nexus server
+    config.vm.define "nexus" do |nx|
+      nx.vm.hostname = "nexus";
+      # static ip address
+      nx.vm.network :private_network, ip: "192.168.60.20"
+      #nx.vm.network :forwarded_port, guest: 8081, host: 8090
+    end
 end
