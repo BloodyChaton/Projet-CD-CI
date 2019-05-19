@@ -30,10 +30,14 @@ pipeline{
     }
     stage ('test'){
       parallel{
-        stage ('etape-1.1') {
-          steps {    
-            sh "mvn test"
+        try{
+          stage ('etape-1.1') {
+            steps {    
+              sh "mvn test"
+            }
           }
+        } catch (Exception e) {
+          echo "Stage failed, let's continue the build though"
         }
         stage ('etape-1.2') {
           steps {
