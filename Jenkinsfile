@@ -16,11 +16,6 @@ pipeline{
         sh "mvn validate"
       }
     }
-    stage ('deploy'){
-      steps{
-        sh "mvn deploy -DskipTests"
-      }
-    }
     stage ('test'){
       parallel{
         stage ('etape-1.1') {
@@ -35,5 +30,10 @@ pipeline{
         }
       }
     }
+    // stage ('deploy'){
+    //   steps{
+    //     sh "mvn deploy -DskipTests"
+    //   }
+    // }
   }
 }
