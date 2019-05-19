@@ -28,28 +28,24 @@ pipeline{
         sh "mvn validate"
       }
     }
-    stage ('test'){
-      parallel{
-        try{
-          stage ('etape-1.1') {
-            steps {    
-              sh "mvn test"
-            }
-          }
-        } catch (Exception e) {
-          echo "Stage failed, let's continue the build though"
-        }
-        stage ('etape-1.2') {
-          steps {
-            sh "mvn pmd:pmd"
-          }
-        }
-      }
-    }
-    // stage ('deploy'){
-    //   steps{
-    //     sh "mvn deploy -DskipTests"
+    // stage ('test'){
+    //   parallel{
+    //     stage ('etape-1.1') {
+    //       steps {    
+    //         sh "mvn test"
+    //       }
+    //     }
+    //     stage ('etape-1.2') {
+    //       steps {
+    //         sh "mvn pmd:pmd"
+    //       }
+    //     }
     //   }
     // }
+    stage ('deploy'){
+      steps{
+        sh "mvn deploy -DskipTests"
+      }
+    }
   }
 }
