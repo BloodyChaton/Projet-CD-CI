@@ -4,7 +4,7 @@
   tasks:
     - name : Download Java 1.8 
       yum:
-        name: java-1.8.0-openjdk-devel
+        name: java-1.8.0-openjdk-devel,git
         state: present
 
     # - name : Untar JDK
