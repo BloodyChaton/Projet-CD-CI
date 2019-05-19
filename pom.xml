@@ -84,6 +84,17 @@
 					</resources>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<autoVertionSubmodules>true</autoVertionSubmodules>
+				</configuration>
+			</plugin>
+
+
+
 		</plugins>
 	</build>
   	<reporting>
@@ -96,6 +107,14 @@
 
     	</plugins>
   	</reporting>
+	<!-- =========================================================SCM==================================================== -->
+
+	<scm>
+
+		<connection>scm:git:git@github.com:BloodyChaton/Projet-CD-CI.git</connection>
+		<url>https://github.com/BloodyChaton/Projet-CD-CI.git</url>
+	</scm>
+
 	<repositories>
 
 		<repository>
