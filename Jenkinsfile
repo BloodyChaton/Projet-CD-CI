@@ -11,6 +11,12 @@ pipeline{
           git branch: 'features/luc', credentialsId: 'GitHubCDCI', url: 'https://github.com/BloodyChaton/Projet-CD-CI.git'
         }
     }
+    stage ('set-up env variable') {
+      steps{
+        sh "./env.sh"
+        sh "echo $MONGODB_ADMIN_USER"
+      }
+    }
     stage ('validate'){
       steps{
         sh "mvn validate"

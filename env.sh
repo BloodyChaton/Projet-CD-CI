@@ -1,4 +1,4 @@
  export MONGODB_ADMIN_USER=yacuba
  export MONGODB_ADMIN_PWD=yacuba
- export MONGODB_URL=url
- export MONGODB_PORT=30000
+ export MONGODB_URL=192.168.60.4
+ export MONGODB_PORT=27017
