@@ -66,6 +66,24 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.11</version>
+				<configuration>
+					<imageName>myimage</imageName>
+					<baseImage>java</baseImage>
+					<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+					<!-- copy the service's jar file from target into the root directory of the image -->
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
   	<reporting>
@@ -75,8 +93,18 @@
         		<artifactId>maven-pmd-plugin</artifactId>
         		<version>3.12.0</version>
       		</plugin>
+
     	</plugins>
   	</reporting>
+	<repositories>
+
+		<repository>
+			<id>central</id>
+			<name>localhost.localdomain-releases</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+	</repositories>
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
