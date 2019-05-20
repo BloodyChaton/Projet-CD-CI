@@ -9,6 +9,7 @@ target/
 .gradle
 .project
 .vscode
+.vagrant
 
 # ignore MacOS files
 **/**/.DS_Store
