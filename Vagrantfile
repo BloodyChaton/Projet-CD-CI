@@ -16,4 +16,10 @@ Vagrant.configure("2") do |config|
     kb.vm.network :private_network, ip: "192.168.60.5"
     kb.vm.network :forwarded_port, guest: 80, host: 80
   end
+  # Docker server
+  config.vm.define "docker" do |dk|
+    dk.vm.hostname = "docker";
+    # static ip address
+    dk.vm.network :private_network, ip: "192.168.60.6"
+  end
 end
