@@ -20,7 +20,7 @@
 
 - name: RHEL | Install Python Devel
   yum:
-    name: gcc,python-devel,epel-release
+    name: gcc,python-devel,epel-release,policycoreutils-python
     state: present
 
 - name: RHEL | Install Pymongo
