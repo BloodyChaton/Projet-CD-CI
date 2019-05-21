@@ -93,8 +93,6 @@
 				</configuration>
 			</plugin>
 
-
-
 		</plugins>
 	</build>
   	<reporting>
@@ -114,24 +112,23 @@
 		<connection>scm:git:git@github.com:BloodyChaton/Projet-CD-CI.git</connection>
 		<url>https://github.com/BloodyChaton/Projet-CD-CI.git</url>
 	</scm>
-
+<!-- 
 	<repositories>
-
 		<repository>
 			<id>central</id>
 			<name>localhost.localdomain-releases</name>
 			<url>http://localhost:8081/repository/maven-releases/</url>
 		</repository>
-	</repositories>
+	</repositories> -->
 
 	<distributionManagement>
 		<snapshotRepository>
-			<id>nexus</id>
-			<url>http://localhost:8081/repository/maven-snapshots/</url>
+			<id>nexus-snap</id>
+			<url>http://192.168.60.20:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 		<repository>
-			<id>nexus</id>
-			<url>http://localhost:8081/repository/maven-releases/</url>
+			<id>nexus-rel</id>
+			<url>http://192.168.60.20:8081/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
 </project>

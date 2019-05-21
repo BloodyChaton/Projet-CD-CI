@@ -8,6 +8,9 @@
 [db-server]
 192.168.60.4
 
+# Database servers
+[jenkins-server]
+40.115.13.128
 
 # Variables that will be applied to all servers
 [all:vars]
