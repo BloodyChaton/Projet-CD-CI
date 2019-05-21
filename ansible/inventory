@@ -6,7 +6,7 @@
 
 # Database servers
 [db-server]
-192.168.60.4
+168.63.56.135
 
 # Database servers
 [jenkins-server]
@@ -14,5 +14,7 @@
 
 # Variables that will be applied to all servers
 [all:vars]
-ansible_ssh_user=vagrant
+ansible_ssh_user=azure
+ansible_ssh_pass=AZUREmaeab8bd
+ansible_sudo_pass=AZUREmaeab8bd
 #ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
