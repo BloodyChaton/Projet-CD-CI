@@ -114,10 +114,8 @@
 		<connection>scm:git:git@github.com:BloodyChaton/Projet-CD-CI.git</connection>
 		<url>https://github.com/BloodyChaton/Projet-CD-CI.git</url>
 	</scm>
-
+   <!--
 	<repositories>
-
-	<!--
 	<repository>
 			<id>central</id>
 			<name>localhost.localdomain-releases</name>
