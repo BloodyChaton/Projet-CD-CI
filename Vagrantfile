@@ -29,14 +29,13 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "ansible/jenkins.yml"
     end
   end
-  # Docker server
-<<<<<<< HEAD
-  config.vm.define "docker-server" do |dc|
-    dc.vm.hostname = "minikube";
-    # static ip address
-    dc.vm.network :private_network, ip: "192.168.60.15"
-    #dc.vm.network :forwarded_port, guest: 80, host: 80
-  end
+  # # Docker server
+  #   config.vm.define "docker-server" do |dc|
+  #   dc.vm.hostname = "minikube";
+  #   # static ip address
+  #   dc.vm.network :private_network, ip: "192.168.60.15"
+  #   #dc.vm.network :forwarded_port, guest: 80, host: 80
+  # end
     # Nexus server
     config.vm.define "nexus" do |nx|
       nx.vm.hostname = "nexus";
@@ -44,11 +43,10 @@ Vagrant.configure("2") do |config|
       nx.vm.network :private_network, ip: "192.168.60.20"
       #nx.vm.network :forwarded_port, guest: 8081, host: 8090
     end
-=======
+
   config.vm.define "docker" do |dk|
     dk.vm.hostname = "docker";
     # static ip address
     dk.vm.network :private_network, ip: "192.168.60.6"
   end
->>>>>>> features/pipelinedeploy
 end
