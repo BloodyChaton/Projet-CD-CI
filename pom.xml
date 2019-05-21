@@ -117,13 +117,14 @@
 
 	<repositories>
 
-		<repository>
+	<!--
+	<repository>
 			<id>central</id>
 			<name>localhost.localdomain-releases</name>
 			<url>http://192.168.10.7:8081/repository/maven-releases/</url>
 		</repository>
 	</repositories>
-
+    -->
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
